@@ -1,0 +1,20 @@
+{
+  "command": [
+    "train.py",
+    "--config",
+    "experiments\\cybersecurity_core_latency_calibration_config.json"
+  ],
+  "config_path": "experiments\\cybersecurity_core_latency_calibration_config.json",
+  "config_sha256": "6af8ab3884bb5c4bfbf64c3698543ed360b30d867895552704811dea6c209eae",
+  "python_version": "3.12.13 (main, Mar  3 2026, 15:01:35) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "gpu_info": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.62, 8188 MiB",
+  "package_versions": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.1",
+    "pandas": "3.0.3",
+    "sklearn": "1.9.0",
+    "xgboost": "3.3.0"
+  }
+}

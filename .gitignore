@@ -1,0 +1,46 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+tmp/
+temp/
+
+# Local IDE and OS metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Raw datasets and generated full splits are not redistributed.
+data/raw/
+data/processed/**
+!data/processed/
+!data/processed/**/
+!data/processed/**/leakage_report.csv
+
+# Large regenerated experiment artifacts
+**/raw_predictions.csv
+*.pkl
+*.pickle
+*.joblib
+*.parquet
+*.feather
+*.npy
+*.npz
+
+# Archives and local packaging outputs
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+

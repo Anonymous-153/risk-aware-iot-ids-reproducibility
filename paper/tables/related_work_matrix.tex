@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{2.5cm}@{}}
+\toprule
+Study & IDS setting & Uncertainty or calibration & Attack-risk control & Deployment cost \\
+\midrule
+Jin and Zhao \cite{jin2022highreliability} & Intrusion detection & Conformal prediction & Not class specific & Not reported \\
+Talpini et al. \cite{talpini2024trustworthiness} & Network IDS & Uncertainty and open-set analysis & Not conformal & Model overhead discussed \\
+Fawaz et al. \cite{fawaz2025calibrated} & Network IDS & Calibration-aware feature selection & Calibration focused & Not latency focused \\
+Yang et al. \cite{yang2023bilstmattention} & Fog/IoT IDS on UNSW-NB15 & Deep sequence detector & Point prediction & Not conformal cost \\
+Maasaoui et al. \cite{maasaoui2024llmids} & IoT/network IDS & BERT/LLM classifier & Point prediction & Not prediction-set cost \\
+Talpini et al. \cite{talpini2025federated} & Distributed IDS & Federated calibration & Calibration focused & Privacy and distribution cost \\
+Puccetti and Ceccarelli \cite{puccetti2026latencies} & Network and IoT detectors & Evaluation metrics & Detection-time trade-off & Attack latency emphasized \\
+This study & Binary IoT IDS and UNSW-NB15 & Class-conditional conformal prediction & Class-specific error budgets & Set size, singleton rate, and latency \\
+\bottomrule
+\end{tabular}
+\caption{Positioning of this study relative to recent IDS uncertainty, calibration, and deployment-oriented evaluation work.}
+\label{tab:related-work-matrix}
+\end{table}

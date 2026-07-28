@@ -1,0 +1,133 @@
+dataset,path,target,rows_seen,rows_selected
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Benign\BenignTraffic.pcap_Flow.csv,0,183630,92073
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Benign\BenignTraffic1.pcap_Flow.csv,0,84526,42447
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Benign\BenignTraffic2.pcap_Flow.csv,0,91279,45864
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Benign\BenignTraffic3.pcap_Flow.csv,0,38895,19616
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\BruteForce\DictionaryBruteForce.pcap_Flow.csv,1,3619,32
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation.pcap_Flow.csv,1,323886,2294
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation1.pcap_Flow.csv,1,137172,1068
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation10.pcap_Flow.csv,1,166796,1213
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation11.pcap_Flow.csv,1,198622,1405
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation12.pcap_Flow.csv,1,37292,240
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation2.pcap_Flow.csv,1,121409,831
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation3.pcap_Flow.csv,1,174443,1265
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation4.pcap_Flow.csv,1,152216,1124
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation5.pcap_Flow.csv,1,209344,1507
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation6.pcap_Flow.csv,1,209790,1536
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation7.pcap_Flow.csv,1,127543,947
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation8.pcap_Flow.csv,1,179379,1247
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ACK Fragmentation\DDoS-ACK_Fragmentation9.pcap_Flow.csv,1,412194,3061
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood.pcap_Flow.csv,1,10415,69
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood1.pcap_Flow.csv,1,8263,60
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood10.pcap_Flow.csv,1,7558,62
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood11.pcap_Flow.csv,1,8312,58
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood12.pcap_Flow.csv,1,7204,49
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood13.pcap_Flow.csv,1,5552,34
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood14.pcap_Flow.csv,1,6572,48
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood15.pcap_Flow.csv,1,10323,76
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood16.pcap_Flow.csv,1,10270,62
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood17.pcap_Flow.csv,1,4643,27
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood18.pcap_Flow.csv,1,4062,27
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood19.pcap_Flow.csv,1,8121,63
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood2.pcap_Flow.csv,1,10958,76
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood20.pcap_Flow.csv,1,7322,66
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood21.pcap_Flow.csv,1,7293,73
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood22.pcap_Flow.csv,1,5993,41
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood23.pcap_Flow.csv,1,5193,44
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood24.pcap_Flow.csv,1,6055,44
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood25.pcap_Flow.csv,1,9442,77
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood26.pcap_Flow.csv,1,5432,37
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood3.pcap_Flow.csv,1,7845,54
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood4.pcap_Flow.csv,1,16190,111
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood5.pcap_Flow.csv,1,7840,44
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood6.pcap_Flow.csv,1,4783,30
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood7.pcap_Flow.csv,1,3244,30
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood8.pcap_Flow.csv,1,6411,46
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS ICMP Flood\DDoS-ICMP_Flood9.pcap_Flow.csv,1,6955,51
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-HTTP Flood\DDoS-HTTP_Flood-.pcap_Flow.csv,1,505720,3723
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation.pcap_Flow.csv,1,14479,100
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation1.pcap_Flow.csv,1,17480,142
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation10.pcap_Flow.csv,1,14420,111
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation11.pcap_Flow.csv,1,11479,78
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation12.pcap_Flow.csv,1,18026,126
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation13.pcap_Flow.csv,1,12980,108
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation14.pcap_Flow.csv,1,13411,100
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation15.pcap_Flow.csv,1,9890,89
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation16.pcap_Flow.csv,1,16489,123
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation17.pcap_Flow.csv,1,41632,332
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation18.pcap_Flow.csv,1,9106,79
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation19.pcap_Flow.csv,1,10963,68
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation2.pcap_Flow.csv,1,13462,104
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation3.pcap_Flow.csv,1,23405,188
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation4.pcap_Flow.csv,1,25593,198
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation5.pcap_Flow.csv,1,10617,76
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation6.pcap_Flow.csv,1,10138,67
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation7.pcap_Flow.csv,1,14235,110
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation8.pcap_Flow.csv,1,12572,108
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DDoS\DDoS-ICMP_Fragmentation\DDoS-ICMP_Fragmentation9.pcap_Flow.csv,1,20380,152
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS SYN Flood\DoS-SYN_Flood.pcap_Flow.csv,1,3990181,29209
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS SYN Flood\DoS-SYN_Flood1.pcap_Flow.csv,1,1373103,9970
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS SYN Flood\DoS-SYN_Flood2.pcap_Flow.csv,1,2130835,15702
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS SYN Flood\DoS-SYN_Flood3.pcap_Flow.csv,1,1923524,14063
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS SYN Flood\DoS-SYN_Flood4.pcap_Flow.csv,1,2169821,15777
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS SYN Flood\DoS-SYN_Flood5.pcap_Flow.csv,1,1795088,13090
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS SYN Flood\DoS-SYN_Flood6.pcap_Flow.csv,1,1503778,11069
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS SYN Flood\DoS-SYN_Flood7.pcap_Flow.csv,1,1404314,10123
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-HTTP_Flood\DoS-HTTP_Flood.pcap_Flow.csv,1,932513,6700
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-HTTP_Flood\DoS-HTTP_Flood1.pcap_Flow.csv,1,710231,5186
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-TCP_Flood\DoS-TCP_Flood.pcap_Flow.csv,1,1,0
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-TCP_Flood\DoS-TCP_Flood1.pcap_Flow.csv,1,1,0
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-TCP_Flood\DoS-TCP_Flood10.pcap_Flow.csv,1,1,0
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-TCP_Flood\DoS-TCP_Flood2.pcap_Flow.csv,1,1,0
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-TCP_Flood\DoS-TCP_Flood3.pcap_Flow.csv,1,1,0
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood.pcap_Flow.csv,1,934001,6895
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood10.pcap_Flow.csv,1,61907,465
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood11.pcap_Flow.csv,1,57086,388
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood12.pcap_Flow.csv,1,50017,348
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood13.pcap_Flow.csv,1,59885,434
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood14.pcap_Flow.csv,1,64565,461
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood15.pcap_Flow.csv,1,66453,477
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood16.pcap_Flow.csv,1,35173,244
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood3.pcap_Flow.csv,1,589185,4314
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood4.pcap_Flow.csv,1,901794,6609
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood5.pcap_Flow.csv,1,842995,6083
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood6.pcap_Flow.csv,1,862694,6284
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood7.pcap_Flow.csv,1,539459,3911
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood8.pcap_Flow.csv,1,74524,533
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\DoS\DoS-UDP_Flood\DoS-UDP_Flood9.pcap_Flow.csv,1,70798,501
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood.pcap_Flow.csv,1,5172,28
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood1.pcap_Flow.csv,1,10856,99
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood10.pcap_Flow.csv,1,8187,64
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood11.pcap_Flow.csv,1,8377,50
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood12.pcap_Flow.csv,1,6423,69
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood13.pcap_Flow.csv,1,10306,77
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood14.pcap_Flow.csv,1,2977,16
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood15.pcap_Flow.csv,1,3247,23
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood16.pcap_Flow.csv,1,4438,34
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood17.pcap_Flow.csv,1,2790,15
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood18.pcap_Flow.csv,1,3265,20
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood19.pcap_Flow.csv,1,3481,24
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood2.pcap_Flow.csv,1,4071,27
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood20.pcap_Flow.csv,1,4100,23
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood21.pcap_Flow.csv,1,4507,35
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood22.pcap_Flow.csv,1,6609,50
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood23.pcap_Flow.csv,1,4572,28
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood24.pcap_Flow.csv,1,2546,15
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood25.pcap_Flow.csv,1,2500,20
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood26.pcap_Flow.csv,1,5482,24
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood27.pcap_Flow.csv,1,7602,68
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood28.pcap_Flow.csv,1,8451,65
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood3.pcap_Flow.csv,1,4647,32
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood4.pcap_Flow.csv,1,9012,64
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood5.pcap_Flow.csv,1,3873,27
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood6.pcap_Flow.csv,1,11786,76
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood7.pcap_Flow.csv,1,7789,54
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood8.pcap_Flow.csv,1,5443,39
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Mirai\Mirai-greeth_flood9.pcap_Flow.csv,1,12079,80
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Recon\VulnerabilityScan\VulnerabilityScan.pcap_Flow.csv,1,442158,3293
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Spoofing\ARP Spoofing\MITM-ArpSpoofing.pcap_Flow.csv,1,73033,503
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Spoofing\ARP Spoofing\MITM-ArpSpoofing1.pcap_Flow.csv,1,9349,70
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Spoofing\DNS Spoofing\DNS_Spoofing.pcap_Flow.csv,1,74856,564
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Web-Based\Uploading_Attack\Uploading_Attack.pcap_Flow.csv,1,1348,13
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Web-Based\XSS\XSS.pcap_Flow.csv,1,3377,20
+cic_iot_diad_2024,data\raw\cic_iot_diad_2024\Anomaly Detection - Flow Based features\Web-Based\sqlinjection\SqlInjection.pcap_Flow.csv,1,6603,44

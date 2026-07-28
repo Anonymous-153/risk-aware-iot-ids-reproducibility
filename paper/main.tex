@@ -1,0 +1,166 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lineno}
+\usepackage{setspace}
+
+\title{Risk-Aware Conformal Prediction for IoT Intrusion Detection: Coverage, Calibration, and Deployment Cost}
+\author{Anonymous Author(s)}
+\date{}
+
+\begin{document}
+\doublespacing
+\linenumbers
+\maketitle
+
+\begin{abstract}
+Missed attacks are costly in Internet-of-Things intrusion detection, but a single predicted label gives analysts little help when a detector is uncertain. We evaluate a leakage-audited risk-aware conformal prediction workflow for binary IoT intrusion detection. The workflow combines cost-sensitive training, probability calibration, and class-specific conformal error budgets, and it reports attack coverage together with prediction-set size, singleton rate, and two latency measurements. Across five seeds, the strict attack-risk setting reached mean coverage of at least 0.995 on the sampled CIC IoT-DIAD 2024 flow task for Logistic Regression, Random Forest, XGBoost, and MLP, with average prediction-set sizes between 1.512 and 1.635. The same setting reached attack coverage of 1.000 for all four CIC models and for Logistic Regression and MLP on UNSW-NB15, but left UNSW-NB15 Random Forest and XGBoost under-covered, with attack coverage of 0.741 and 0.419. A Platt/sigmoid calibration baseline reduced set sizes in several settings but did not consistently improve attack coverage. In the raw-proportion CIC stress test, high conformal coverage coexisted with attack-dominant point predictions under the downloaded branch's attack-heavy ratio. End-to-end batched flow-level latency ranged from 0.0030 to 0.0136 ms per sample for the selected operating points on the local workstation. The results support conformal prediction as an IDS uncertainty layer whose usefulness depends on class-wise coverage, model calibration, and analyst-facing set size, not on accuracy alone.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Internet of Things; intrusion detection; conformal prediction; cost-sensitive learning; probability calibration; imbalanced classification
+
+\section{Introduction}
+
+IoT intrusion detection systems must identify malicious traffic under class imbalance while still giving security analysts useful decisions. In a triage workflow, missing an attack can cost more than sending one additional ambiguous case for review. Standard classifiers usually return a single label and a confidence score. If that score is poorly calibrated under distribution shift or minority-class scarcity, the interface hides an important distinction: whether the detector is making a clear decision or flagging a case that should be escalated.
+
+Conformal prediction exposes part of that uncertainty by returning a set of plausible labels rather than one label. For intrusion detection, however, marginal coverage is too blunt. A detector can satisfy an aggregate coverage target while still under-covering attack traffic. It can also repair attack coverage by returning so many two-label sets that the output becomes less useful for triage. Recent IDS work has made uncertainty and calibration more visible, but IoT IDS evaluations still rarely report attack-risk coverage, set size, and latency together.
+
+We study conformal prediction as a risk-control layer for binary IoT intrusion detection. The question is not simply whether a prediction set contains the true label. The useful question for IDS triage is whether class-wise coverage, set size, and latency remain acceptable at the same time. We evaluate three linked issues: whether class-specific error budgets raise attack coverage, whether the conclusions hold under a raw-proportion CIC sample, and whether failure diagnostics identify model families for which conformal prediction remains overconfident.
+
+The contributions are:
+
+\begin{itemize}
+  \item A reproducible IDS evaluation pipeline that separates model training, probability calibration, conformal calibration, and testing, with leakage audits before modeling.
+  \item An evaluation of risk-aware class-specific conformal error budgets for attack and benign traffic, framed as risk reporting rather than detector performance leadership.
+  \item A multi-model study of Logistic Regression, Random Forest, XGBoost, and MLP on sampled CIC IoT-DIAD 2024, a raw-proportion CIC stress test, and UNSW-NB15.
+  \item A deployment-oriented reporting package that includes raw predictions, per-run metrics, class-wise coverage, prediction-set size, singleton rate, latency, and UNSW-NB15 failure diagnostics.
+\end{itemize}
+
+\section{Related Work}
+
+\subsection{Benchmark Intrusion Detection Data}
+
+UNSW-NB15 remains a common benchmark for network intrusion detection because it provides labeled modern normal traffic, synthetic attack traffic, and an official train/test partition \cite{moustafa2015unsw,moustafa2016evaluation,unsw_nb15_dataset}. Its fixed partition helps reproducibility, although the benchmark is not IoT-specific. CIC IoT-DIAD 2024 is closer to the deployment setting considered here: it targets device identification and anomaly detection in IoT environments and provides flow-based features for anomaly-detection studies \cite{rabbani2025device,unb_2024_ciciotdiad}. Using both datasets lets the evaluation separate general IDS behavior from IoT-focused traffic behavior while staying within public data that other researchers can obtain.
+
+\subsection{Imbalanced Learning and Cost-Sensitive Decisions}
+
+Intrusion detection data are often imbalanced. Benign flows may dominate in many settings, and rare attack types can be missed even when aggregate accuracy looks acceptable. Work on imbalanced learning argues for metrics and training procedures that do not bury minority-class behavior inside a majority-class average \cite{he2009imbalanced}. Cost-sensitive learning offers a direct way to encode asymmetric mistakes during training or decision making \cite{elkan2001foundations}. Here, cost sensitivity is treated as an ablation rather than as a standalone contribution, so its effect can be separated from calibration and conformal prediction.
+
+\subsection{Uncertainty, Calibration, and Conformal Prediction}
+
+Probability calibration matters when IDS workflows route uncertain events to analysts. A classifier score is useful only if it tracks empirical correctness. Modern classifiers can be poorly calibrated, and post-hoc calibration can improve probability estimates \cite{guo2017calibration}. Conformal prediction uses a held-out calibration set to return prediction sets with finite-sample coverage guarantees under exchangeability assumptions \cite{vovk2022algorithmic,angelopoulos2023conformal}. Class-conditional conformal prediction moves the target from marginal coverage to class-aware coverage, which is relevant when attack coverage matters more than aggregate coverage alone \cite{ding2023class}. We evaluate that idea in a binary IoT intrusion-detection pipeline and report both detection metrics and uncertainty metrics.
+
+Recent IDS work also treats uncertainty as part of trustworthiness, not merely as a secondary model property. Talpini et al. \cite{talpini2024trustworthiness} studied uncertainty quantification for ML-based network intrusion detection, and later work considered calibration in distributed IDS settings \cite{talpini2025federated}. Fawaz et al. \cite{fawaz2025calibrated} focused on better-calibrated network-intrusion models through calibration-aware feature selection. Deep IDS models remain an important comparison point: Yang et al. \cite{yang2023bilstmattention} used a Bi-LSTM attention model for intrusion detection, and Maasaoui et al. \cite{maasaoui2024llmids} studied a BERT-based detector for anomaly-based IDS. These works motivate stronger point detectors, but most still report a single class decision rather than class-wise conformal coverage and prediction-set cost.
+
+Conformal prediction has begun to appear directly in intrusion-detection research. Jin and Zhao \cite{jin2022highreliability} used a conformal prediction framework for high-reliability intrusion detection, supporting the premise that prediction sets can be useful in security classification and not only in generic supervised learning. Risk-controlling prediction sets also show how prediction-set methods can be tied to a user-defined loss or risk target \cite{bates2021risk}. Our study takes a narrower empirical angle for IDS: it evaluates class-specific conformal error budgets and reports attack coverage, set size, singleton rate, calibration error, latency, and leakage audits together.
+
+\subsection{Operational Cost and Study Positioning}
+
+IDS evaluation is often organized around accuracy, recall, false positives, and related classification metrics. Deployment also depends on detection time and triage burden. Recent latency-focused IDS work argues that detection latency should be reported alongside conventional quality metrics \cite{puccetti2026latencies,dash2026latency}. In conformal IDS, the operator-facing cost is not just computation time. It also includes the cases that become two-label prediction sets and require analyst escalation. Table~\ref{tab:related-work-matrix} places this study alongside recent work on IDS uncertainty, calibration, and latency.
+
+\input{tables/related_work_matrix.tex}
+
+\section{Method}
+
+\subsection{Data Splitting and Leakage Controls}
+
+The pipeline preserves official train/test splits when they are available. For datasets without official splits, it creates stratified train, calibration, and test partitions. Preprocessing is fit on the training partition only. Flow identifiers, IP address fields, attack-category helper labels, and post-event identifiers are dropped before modeling.
+
+\subsection{Cost-Sensitive Learning}
+
+For each model and seed, the cost-sensitive ablation computes inverse-frequency sample weights from the training labels. The same weighting rule is used for Logistic Regression, Random Forest, XGBoost, and MLP whenever the estimator supports sample weights.
+
+\subsection{Calibration}
+
+The main calibration path fits a binned probability calibrator on the held-out calibration partition. A Platt/sigmoid calibrator is included as a lightweight calibration baseline. It fits one-vs-rest sigmoid models to the logits of the class probabilities on the same probability-calibration rows. Calibration is applied after base model training and before conformal threshold estimation. When probability calibration and conformal prediction are both enabled, the held-out calibration partition is split into two stratified subsets for each seed. One subset fits the probability calibrator, and the other estimates conformal thresholds. This split keeps the same labeled rows from serving both calibration roles.
+
+\subsection{Class-Conditional and Risk-Aware Conformal Prediction}
+
+For a classifier probability vector \(p(x)\), nonconformity is defined as \(1 - p_y(x)\), where \(y\) is the true calibration label. The method estimates one threshold per class and returns a prediction set containing labels whose nonconformity score is below the corresponding class threshold.
+
+The risk-aware operating policy assigns separate conformal error budgets \(\alpha_0\) and \(\alpha_1\) to benign and attack labels instead of using one \(\alpha\) for every class. A smaller \(\alpha_1\) makes the attack-class threshold more conservative, which can increase attack coverage at the cost of larger prediction sets. The experiments treat \(\alpha_1 \in \{0.001, 0.005, 0.01\}\) and \(\alpha_0 \in \{0.01, 0.05\}\) as pre-specified operating points rather than tuned hyperparameters.
+
+\section{Experiments}
+
+\subsection{Datasets}
+
+The experiments use the flow-based anomaly-detection branch of CIC IoT-DIAD 2024 and the official train/test files of UNSW-NB15. The downloaded CIC flow branch contained 398,330 benign rows and 27,411,674 attack rows. To keep the primary experiment reproducible on the available workstation while balancing the binary task, chunked reservoir sampling selected 200,000 rows per binary label before duplicate removal and splitting. The final balanced CIC splits contained 255,938 training rows, 63,985 calibration rows, and 79,980 test rows.
+
+A second capped proportional sample was added as a raw-proportion stress test. After duplicate removal, this stress-test split contained 3,666 benign and 252,316 attack rows for training, 917 benign and 63,079 attack rows for calibration, and 1,146 benign and 78,849 attack rows for testing. The corresponding UNSW-NB15 splits contained 140,273 training rows, 35,068 calibration rows, and 82,332 test rows. Leakage reports for all processed splits passed after dropping flow identifiers, IP address fields, timestamps, source-file provenance, and attack-category helper labels.
+
+\subsection{Baselines and Ablations}
+
+The experimental matrix contains four model families and four primary ablations: baseline, cost-sensitive only, calibration only, and the full cost-sensitive calibrated conformal pipeline. It also includes Platt/sigmoid calibration for the full and strict risk-aware settings. Complete ablation outputs are included in the reproducibility package, while the main text focuses on the operating points that affect IDS triage.
+Random Forest and XGBoost are included because tree ensembles are standard tabular-data baselines \cite{breiman2001random,chen2016xgboost}. Logistic Regression and a small MLP provide linear and neural baselines under the same preprocessing and split policy.
+
+\subsection{Metrics}
+
+The primary metrics are Macro-F1, Matthews correlation coefficient, balanced accuracy, macro PR-AUC, Brier score, expected calibration error, conformal coverage, average set size, singleton rate, and latency per sample. The latency audit reports both batched model-only inference time and end-to-end flow-level time. The end-to-end measurement starts from a test flow-feature row and includes preprocessing, model inference, probability calibration, and conformal prediction-set generation. All latency values are local workstation measurements, not edge-device deployment results.
+
+\subsection{Results}
+
+The sampled CIC flow task is the setting in which the risk-aware conformal layer behaves as intended. Under the strict attack-risk setting, all four model families kept attack coverage at 1.000 and mean overall coverage at or above 0.995, while average set size stayed between 1.512 and 1.635 (Table~\ref{tab:risk-aware-strict}). The point classifiers were not equal--Random Forest and XGBoost had the highest Macro-F1 on this sample--but the conformal layer made their uncertainty outputs similar enough for an analyst to compare.
+
+\input{tables/cybersecurity_risk_aware_strict/main_metrics.tex}
+
+UNSW-NB15 breaks that pattern. The same strict setting still reached attack coverage of 1.000 for Logistic Regression and MLP, but Random Forest and XGBoost reached only 0.741 and 0.419 attack coverage. The diagnostic table makes the failure hard to miss. Across the five seeds, Random Forest and XGBoost left 91,744 and 179,483 predictions uncovered; their uncovered examples had mean true-label probabilities of 0.040 and 0.015 but mean maximum probabilities of 0.960 and 0.985. Logistic Regression and MLP also made confident misses, but they made far fewer of them. The issue is therefore not the existence of high-confidence errors alone, but how often a model assigns attack traffic to a score region where the conformal threshold does not add the attack label.
+
+\input{tables/unsw_failure_diagnostics_metrics.tex}
+
+The Platt/sigmoid baseline is a useful check on the calibration choice, not a replacement for the main path. On the sampled CIC task, Platt calibration often reduced average set size, but binned calibration gave lower ECE and retained attack coverage of 1.000 in the strict setting. On UNSW-NB15, Platt slightly improved some Brier scores and ECE values for tree models, yet it reduced attack coverage for every model in the strict risk-aware comparison (Table~\ref{tab:calibration-baseline}). A lower or comparable calibration error therefore did not guarantee the attack-risk behavior wanted by the IDS policy.
+
+\input{tables/calibration_baseline_metrics.tex}
+
+The raw-proportion CIC stress test changes the reading of the balanced CIC result. In the attack-heavy capped sample, Logistic Regression, MLP, and XGBoost had mean balanced accuracy of 0.500 and mean Macro-F1 of 0.496, which is consistent with an attack-dominant decision pattern rather than useful binary discrimination. Random Forest remained more informative, with mean Macro-F1 of 0.739 and balanced accuracy of 0.708. Coverage stayed high, but the more relevant effect of the risk-aware setting was on analyst cost. It reduced average set size from 2.000 to 1.125 for Logistic Regression, from 1.973 to 1.070 for MLP, and from 1.625 to 1.043 for XGBoost while keeping attack coverage at 1.000. This stress test narrows the CIC claim: balanced-sample point metrics should not be read as deployment performance under the downloaded branch's raw attack-heavy ratio.
+
+\input{tables/cybersecurity_cic_raw_proportion/main_metrics.tex}
+
+The latency audit separates the narrow model-only timing from the end-to-end flow-level timing. For the selected risk-aware operating points, end-to-end batched latency ranged from 0.00300 ms per sample on the raw-proportion Logistic Regression setting to 0.01363 ms per sample for Random Forest on the sampled CIC task. Model-only timing was smaller, as expected, because it excludes preprocessing, probability calibration, and conformal set generation. All values in Table~\ref{tab:deployment-cost} are means over three repeated full-test batched evaluations on the local workstation. They should be read alongside set size and singleton rate: UNSW-NB15 XGBoost was computationally cheap and mostly singleton, but it under-covered attack traffic.
+
+\input{tables/deployment_cost_metrics.tex}
+
+\section{Discussion}
+
+The central finding is that conformal uncertainty is model- and split-dependent. On the sampled CIC task, risk-aware conformal prediction produced a conservative uncertainty layer around four tabular classifiers. On UNSW-NB15, the same procedure identified model families whose coverage behavior remained unreliable. This diagnostic value matters for IDS triage: a prediction-set interface is useful only when it separates informative ambiguous cases from confident singleton decisions that may still miss attacks.
+
+The UNSW failure is not explained by one bad metric. The uncovered examples for all models were high-confidence cases, but Logistic Regression and MLP produced only small pockets of such errors under the strict attack-risk setting. Random Forest and XGBoost produced them at scale. A plausible explanation is that the official UNSW split places many attack rows in score regions where the fitted tree-based models assign very low true-label probabilities after calibration. Lowering the attack error budget can help only if the candidate attack label remains near the inclusion threshold. Once the score is far beyond the calibrated threshold, class-specific alpha has little room to repair the set without making large portions of the test split ambiguous. This interpretation is consistent with the dependence of conformal coverage on calibration/test exchangeability and score behavior \cite{vovk2022algorithmic,angelopoulos2023conformal,ding2023class}.
+
+The Platt baseline supports the same interpretation. It reduced average set size in several rows and sometimes improved Brier score, but it also reduced UNSW attack coverage compared with the binned strict risk-aware path. For IDS triage, a cleaner probability score is not automatically a safer uncertainty output. The operating objective is class-wise coverage under an acceptable set-size budget, so calibration methods should be judged through that joint lens.
+
+The raw-proportion CIC result limits how far the balanced CIC result should be generalized. Under the downloaded branch's attack-heavy ratio, high coverage largely reflected attack-dominant predictions for several models. Such behavior may still reduce missed attacks, but it is not a useful binary detector unless benign traffic can be separated well enough to preserve informative singleton sets. Reporting balanced CIC and raw-proportion CIC separately avoids treating balanced-sample point metrics as deployment performance under the raw attack-heavy ratio.
+
+The end-to-end latency measurement also changes the practical reading. Model-only timing understates the path an IDS event follows through preprocessing, prediction, calibration, and set construction. The end-to-end batched measurement is still small on the workstation used here, but it is not an edge-device serving result. In this study, the larger deployment cost is the analyst-facing one: two-label sets transfer work from the model to the review queue. Latency, set size, and singleton rate therefore need to be read together.
+
+\section{Limitations}
+
+First, the primary CIC experiment uses a balanced reservoir sample from the official flow-based branch rather than all 27,810,004 downloaded rows. The raw-proportion stress test addresses part of this limitation, but it is still a capped sample and not a full-data chronological deployment study. Future work should use chronological windows when the raw timestamps and storage budget allow it. Second, both datasets are reduced to binary benign-versus-attack labels. This design matches the current conformal setup, but it does not test attack-family localization or device-level attribution. Multiclass conformal prediction is a natural next step, although adding it here would change the target task and require a separate leakage and calibration audit. Third, the study uses tabular baselines rather than GNN, Transformer, or LLM-based detectors. That choice keeps the protocol reproducible under the time constraint, but it blocks claims about deep sequence, graph, or language-model IDS architectures. Fourth, conformal coverage depends on calibration data that are representative of test traffic. The UNSW-NB15 Random Forest and XGBoost results show that this condition can be strained under an official split. Finally, the latency results are batched workstation measurements. XGBoost used a CUDA configuration, but the recorded warning showed prediction falling back through a CPU-input DMatrix path, so the numbers should not be read as optimized GPU serving or edge-device latency.
+
+\section{Conclusion}
+
+This study evaluated cost-sensitive, calibrated, and risk-aware conformal prediction for binary IoT intrusion detection. On the sampled CIC IoT-DIAD 2024 flow task, the strict attack-risk setting reached attack coverage of 1.000 and mean coverage above 0.995 across four model families. The raw-proportion CIC stress test narrowed that claim: under the downloaded branch's attack-heavy ratio, several point classifiers collapsed to attack-dominant behavior even though conformal coverage remained high. On UNSW-NB15, risk-aware conformal prediction was model-dependent. Logistic Regression and MLP reached attack coverage of 1.000 under the strict setting, while Random Forest and XGBoost still under-covered and produced many confident uncovered predictions. Platt calibration reduced set size in some rows but did not consistently protect attack coverage. End-to-end batched latency was small on the local workstation, yet set size and singleton rate captured the analyst-facing deployment cost more directly. Conformal prediction is useful for IDS evaluation when coverage, set size, point-metric behavior, latency, and class-wise diagnostics are reported together.
+
+\section*{Abbreviations}
+
+\begin{tabular}{@{}ll@{}}
+\toprule
+Abbreviation & Definition \\
+\midrule
+APS & Adaptive prediction set \\
+CIC & Canadian Institute for Cybersecurity \\
+ECE & Expected calibration error \\
+IDS & Intrusion detection system \\
+IoT & Internet of Things \\
+MCC & Matthews correlation coefficient \\
+MLP & Multilayer perceptron \\
+RF & Random Forest \\
+\bottomrule
+\end{tabular}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

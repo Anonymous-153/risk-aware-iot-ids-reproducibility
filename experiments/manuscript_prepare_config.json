@@ -1,0 +1,31 @@
+{
+  "seed": 42,
+  "test_size": 0.2,
+  "calibration_size": 0.2,
+  "prepared_dir": "data/processed",
+  "datasets": [
+    {
+      "name": "cic_iot_diad_2024",
+      "label_column": "Label",
+      "positive_labels": ["Attack"],
+      "derive_label_from_path": true,
+      "benign_path_markers": ["Benign"],
+      "raw_paths": ["data/raw/cic_iot_diad_2024/Anomaly Detection - Flow Based features/**/*.csv"],
+      "sampling": {
+        "strategy": "reservoir_by_binary_label",
+        "max_rows_per_label": 200000,
+        "chunksize": 50000,
+        "manifest": "results/cic_iot_diad_2024_sampling_manifest.csv"
+      }
+    },
+    {
+      "name": "unsw_nb15",
+      "label_column": "label",
+      "positive_labels": ["1", "Attack"],
+      "official_split": {
+        "train": ["data/raw/unsw_nb15/UNSW_NB15_training-set.csv"],
+        "test": ["data/raw/unsw_nb15/UNSW_NB15_testing-set.csv"]
+      }
+    }
+  ]
+}

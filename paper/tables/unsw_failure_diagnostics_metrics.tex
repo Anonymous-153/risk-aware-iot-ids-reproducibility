@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+Model & Coverage & Attack Cov. & Singleton & Uncovered $n$ & $p_y$ Uncov. & Max Prob. & Margin & Unique Max \\
+\midrule
+LogReg & 0.996 $\pm$ 0.005 & 1.000 $\pm$ 0.000 & 0.025 $\pm$ 0.034 & 1472 & 0.006 & 0.994 & 0.988 & 2 \\
+MLP & 0.996 $\pm$ 0.004 & 1.000 $\pm$ 0.000 & 0.041 $\pm$ 0.042 & 1852 & 0.004 & 0.996 & 0.991 & 3 \\
+RF & 0.777 $\pm$ 0.041 & 0.741 $\pm$ 0.075 & 0.726 $\pm$ 0.045 & 91744 & 0.040 & 0.960 & 0.919 & 50 \\
+XGBoost & 0.564 $\pm$ 0.011 & 0.419 $\pm$ 0.019 & 0.930 $\pm$ 0.012 & 179483 & 0.015 & 0.985 & 0.970 & 28 \\
+\bottomrule
+\end{tabular}
+\caption{Machine-generated UNSW-NB15 diagnostics for the strict attack-risk setting. Uncovered probabilities are aggregated over all five seeds.}
+\label{tab:unsw-failure-diagnostics}
+\end{table}

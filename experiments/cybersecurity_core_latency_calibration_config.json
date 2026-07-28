@@ -1,0 +1,23 @@
+{
+  "alpha": 0.01,
+  "latency_repeats": 3,
+  "prepared_dir": "data/processed",
+  "results_dir": "results/cybersecurity_core_latency_calibration",
+  "xgboost_device": "cuda",
+  "models": ["logistic_regression", "random_forest", "xgboost", "mlp"],
+  "ablations": [
+    "full",
+    "risk_aware_full_b0.01_a0.001",
+    "platt_full",
+    "risk_aware_platt_full_b0.01_a0.001"
+  ],
+  "seeds": [11, 23, 37, 53, 71],
+  "datasets": [
+    {
+      "name": "cic_iot_diad_2024"
+    },
+    {
+      "name": "unsw_nb15"
+    }
+  ]
+}

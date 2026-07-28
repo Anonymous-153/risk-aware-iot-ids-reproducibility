@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "test_size": 0.2,
+  "calibration_size": 0.2,
+  "prepared_dir": "data/processed",
+  "datasets": [
+    {
+      "name": "cic_iot_diad_2024_raw_proportion",
+      "label_column": "Label",
+      "positive_labels": ["Attack"],
+      "derive_label_from_path": true,
+      "benign_path_markers": ["Benign"],
+      "raw_paths": ["data/raw/cic_iot_diad_2024/Anomaly Detection - Flow Based features/**/*.csv"],
+      "sampling": {
+        "strategy": "proportional",
+        "max_total_rows": 400000,
+        "min_rows_per_label": 5000,
+        "chunksize": 50000,
+        "manifest": "results/cic_iot_diad_2024_raw_proportion_sampling_manifest.csv"
+      }
+    }
+  ]
+}

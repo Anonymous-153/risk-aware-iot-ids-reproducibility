@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllrrrr@{}}
+\toprule
+Dataset & Model & Operating Point & Model-only & End-to-end & Set Size & Singleton \\
+\midrule
+CIC IoT-DIAD & LogReg & strict 0.01/0.001 & 0.00016 $\pm$ 0.00001 & 0.00751 $\pm$ 0.00022 & 1.635 $\pm$ 0.000 & 0.365 $\pm$ 0.000 \\
+CIC IoT-DIAD & MLP & strict 0.01/0.001 & 0.00035 $\pm$ 0.00002 & 0.00744 $\pm$ 0.00023 & 1.528 $\pm$ 0.001 & 0.472 $\pm$ 0.001 \\
+CIC IoT-DIAD & RF & strict 0.01/0.001 & 0.00624 $\pm$ 0.00032 & 0.01363 $\pm$ 0.00034 & 1.512 $\pm$ 0.000 & 0.488 $\pm$ 0.000 \\
+CIC IoT-DIAD & XGBoost & strict 0.01/0.001 & 0.00113 $\pm$ 0.00006 & 0.00833 $\pm$ 0.00031 & 1.514 $\pm$ 0.002 & 0.486 $\pm$ 0.002 \\
+UNSW-NB15 & LogReg & strict 0.01/0.001 & 0.00011 $\pm$ 0.00001 & 0.00777 $\pm$ 0.00013 & 1.975 $\pm$ 0.034 & 0.025 $\pm$ 0.034 \\
+UNSW-NB15 & MLP & strict 0.01/0.001 & 0.00026 $\pm$ 0.00004 & 0.00725 $\pm$ 0.00225 & 1.959 $\pm$ 0.042 & 0.041 $\pm$ 0.042 \\
+UNSW-NB15 & RF & strict 0.01/0.001 & 0.00295 $\pm$ 0.00016 & 0.01094 $\pm$ 0.00074 & 1.274 $\pm$ 0.045 & 0.726 $\pm$ 0.045 \\
+UNSW-NB15 & XGBoost & strict 0.01/0.001 & 0.00063 $\pm$ 0.00007 & 0.00751 $\pm$ 0.00145 & 1.070 $\pm$ 0.012 & 0.930 $\pm$ 0.012 \\
+CIC raw-prop. & LogReg & raw-prop. 0.05/0.005 & 0.00007 $\pm$ 0.00000 & 0.00300 $\pm$ 0.00006 & 1.125 $\pm$ 0.027 & 0.875 $\pm$ 0.027 \\
+CIC raw-prop. & MLP & raw-prop. 0.05/0.005 & 0.00019 $\pm$ 0.00001 & 0.00317 $\pm$ 0.00019 & 1.070 $\pm$ 0.007 & 0.930 $\pm$ 0.007 \\
+CIC raw-prop. & RF & raw-prop. 0.05/0.005 & 0.00196 $\pm$ 0.00004 & 0.00509 $\pm$ 0.00010 & 1.800 $\pm$ 0.428 & 0.200 $\pm$ 0.428 \\
+CIC raw-prop. & XGBoost & raw-prop. 0.05/0.005 & 0.00106 $\pm$ 0.00006 & 0.00441 $\pm$ 0.00013 & 1.043 $\pm$ 0.002 & 0.957 $\pm$ 0.002 \\
+\bottomrule
+\end{tabular}
+\caption{Machine-generated deployment-cost indicators for selected risk-aware operating points. Latency is measured in milliseconds per sample on the local experiment workstation; end-to-end timing starts from a test flow-feature row and includes preprocessing, model inference, probability calibration, and conformal set generation.}
+\label{tab:deployment-cost}
+\end{table}

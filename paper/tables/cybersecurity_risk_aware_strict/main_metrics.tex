@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllrrrr@{}}
+\toprule
+Dataset & Model & Ablation & Macro-F1 & Coverage & Attack Cov. & Set Size \\
+\midrule
+CIC IoT-DIAD & LogReg & risk-aware 0.01/0.001 & 0.920 $\pm$ 0.000 & 0.997 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.635 $\pm$ 0.000 \\
+CIC IoT-DIAD & MLP & risk-aware 0.01/0.001 & 0.963 $\pm$ 0.001 & 0.996 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.528 $\pm$ 0.001 \\
+CIC IoT-DIAD & RF & risk-aware 0.01/0.001 & 0.979 $\pm$ 0.000 & 0.995 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.512 $\pm$ 0.000 \\
+CIC IoT-DIAD & XGBoost & risk-aware 0.01/0.001 & 0.976 $\pm$ 0.001 & 0.995 $\pm$ 0.001 & 1.000 $\pm$ 0.000 & 1.514 $\pm$ 0.002 \\
+UNSW-NB15 & LogReg & risk-aware 0.01/0.001 & 0.673 $\pm$ 0.000 & 0.996 $\pm$ 0.005 & 1.000 $\pm$ 0.000 & 1.975 $\pm$ 0.034 \\
+UNSW-NB15 & MLP & risk-aware 0.01/0.001 & 0.647 $\pm$ 0.068 & 0.996 $\pm$ 0.004 & 1.000 $\pm$ 0.000 & 1.959 $\pm$ 0.042 \\
+UNSW-NB15 & RF & risk-aware 0.01/0.001 & 0.535 $\pm$ 0.001 & 0.777 $\pm$ 0.041 & 0.741 $\pm$ 0.075 & 1.274 $\pm$ 0.045 \\
+UNSW-NB15 & XGBoost & risk-aware 0.01/0.001 & 0.533 $\pm$ 0.001 & 0.564 $\pm$ 0.011 & 0.419 $\pm$ 0.019 & 1.070 $\pm$ 0.012 \\
+\bottomrule
+\end{tabular}
+\caption{Strict attack-risk conformal setting generated from the Cybersecurity risk-aware experiment matrix.}
+\label{tab:risk-aware-strict}
+\end{table}

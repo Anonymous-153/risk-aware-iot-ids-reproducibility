@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllrrrrr@{}}
+\toprule
+Dataset & Model & Ablation & Macro-F1 & Bal. Acc. & Coverage & Attack Cov. & Set Size \\
+\midrule
+CIC raw-prop. & LogReg & full & 0.496 $\pm$ 0.000 & 0.500 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 2.000 $\pm$ 0.000 \\
+CIC raw-prop. & LogReg & risk-aware 0.05/0.005 & 0.496 $\pm$ 0.000 & 0.500 $\pm$ 0.000 & 0.999 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.125 $\pm$ 0.027 \\
+CIC raw-prop. & MLP & full & 0.496 $\pm$ 0.000 & 0.500 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.973 $\pm$ 0.007 \\
+CIC raw-prop. & MLP & risk-aware 0.05/0.005 & 0.496 $\pm$ 0.000 & 0.500 $\pm$ 0.000 & 0.999 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.070 $\pm$ 0.007 \\
+CIC raw-prop. & RF & full & 0.739 $\pm$ 0.020 & 0.708 $\pm$ 0.044 & 0.991 $\pm$ 0.001 & 0.991 $\pm$ 0.001 & 1.982 $\pm$ 0.002 \\
+CIC raw-prop. & RF & risk-aware 0.05/0.005 & 0.739 $\pm$ 0.020 & 0.708 $\pm$ 0.044 & 0.997 $\pm$ 0.000 & 0.997 $\pm$ 0.000 & 1.800 $\pm$ 0.428 \\
+CIC raw-prop. & XGBoost & full & 0.496 $\pm$ 0.000 & 0.500 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.625 $\pm$ 0.510 \\
+CIC raw-prop. & XGBoost & risk-aware 0.05/0.005 & 0.496 $\pm$ 0.000 & 0.500 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.043 $\pm$ 0.002 \\
+\bottomrule
+\end{tabular}
+\caption{CIC IoT-DIAD raw-proportion stress-test results generated from the Cybersecurity experiment matrix.}
+\label{tab:cic-raw-proportion}
+\end{table}

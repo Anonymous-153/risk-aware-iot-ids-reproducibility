@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllrrrr@{}}
+\toprule
+Dataset & Model & Calibrator & ECE & Brier & Attack Cov. & Set Size \\
+\midrule
+CIC IoT-DIAD & LogReg & Binned risk-aware & 0.003 $\pm$ 0.001 & 0.130 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.635 $\pm$ 0.000 \\
+CIC IoT-DIAD & LogReg & Risk-aware Platt & 0.019 $\pm$ 0.001 & 0.134 $\pm$ 0.000 & 0.998 $\pm$ 0.000 & 1.595 $\pm$ 0.005 \\
+CIC IoT-DIAD & MLP & Binned risk-aware & 0.002 $\pm$ 0.001 & 0.063 $\pm$ 0.002 & 1.000 $\pm$ 0.000 & 1.528 $\pm$ 0.001 \\
+CIC IoT-DIAD & MLP & Risk-aware Platt & 0.005 $\pm$ 0.001 & 0.063 $\pm$ 0.002 & 0.999 $\pm$ 0.000 & 1.490 $\pm$ 0.007 \\
+CIC IoT-DIAD & RF & Binned risk-aware & 0.001 $\pm$ 0.000 & 0.036 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.512 $\pm$ 0.000 \\
+CIC IoT-DIAD & RF & Risk-aware Platt & 0.007 $\pm$ 0.000 & 0.037 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.511 $\pm$ 0.000 \\
+CIC IoT-DIAD & XGBoost & Binned risk-aware & 0.001 $\pm$ 0.000 & 0.040 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.514 $\pm$ 0.002 \\
+CIC IoT-DIAD & XGBoost & Risk-aware Platt & 0.002 $\pm$ 0.000 & 0.040 $\pm$ 0.000 & 0.999 $\pm$ 0.000 & 1.408 $\pm$ 0.010 \\
+UNSW-NB15 & LogReg & Binned risk-aware & 0.164 $\pm$ 0.007 & 0.433 $\pm$ 0.006 & 1.000 $\pm$ 0.000 & 1.975 $\pm$ 0.034 \\
+UNSW-NB15 & LogReg & Risk-aware Platt & 0.165 $\pm$ 0.004 & 0.423 $\pm$ 0.004 & 0.941 $\pm$ 0.006 & 1.645 $\pm$ 0.004 \\
+UNSW-NB15 & MLP & Binned risk-aware & 0.188 $\pm$ 0.074 & 0.457 $\pm$ 0.101 & 1.000 $\pm$ 0.000 & 1.959 $\pm$ 0.042 \\
+UNSW-NB15 & MLP & Risk-aware Platt & 0.166 $\pm$ 0.065 & 0.446 $\pm$ 0.095 & 0.931 $\pm$ 0.039 & 1.617 $\pm$ 0.039 \\
+UNSW-NB15 & RF & Binned risk-aware & 0.393 $\pm$ 0.011 & 0.718 $\pm$ 0.032 & 0.741 $\pm$ 0.075 & 1.274 $\pm$ 0.045 \\
+UNSW-NB15 & RF & Risk-aware Platt & 0.389 $\pm$ 0.010 & 0.718 $\pm$ 0.027 & 0.675 $\pm$ 0.048 & 1.219 $\pm$ 0.028 \\
+UNSW-NB15 & XGBoost & Binned risk-aware & 0.449 $\pm$ 0.009 & 0.884 $\pm$ 0.007 & 0.419 $\pm$ 0.019 & 1.070 $\pm$ 0.012 \\
+UNSW-NB15 & XGBoost & Risk-aware Platt & 0.437 $\pm$ 0.004 & 0.880 $\pm$ 0.007 & 0.404 $\pm$ 0.006 & 1.044 $\pm$ 0.005 \\
+\bottomrule
+\end{tabular}
+\caption{Machine-generated calibration baseline comparison under the strict attack-risk setting. The binned and Platt rows use the same train, calibration, and test splits.}
+\label{tab:calibration-baseline}
+\end{table}
